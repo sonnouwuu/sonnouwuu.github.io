@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+<meta charset="UTF-8">
+<title>TEHNO-WOOD</title>
+<meta  name="description" content="Page description" >
+<meta name="keywords" content="Лучшие предложения по мебели и интерьеру" >
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="stylesait.css">
+<link rel="icon" type="image/ico" href="logocopy.ico">
+<style>
+      @import url('stylesait1.css');
+      @import url('stylesait2.css');
+      @import url('stylesait3.css');
+      @import url('stylesait4.css');
+      @import url('stylesait5.css');
+       @import url('stylesait6.css');
+        @import url('form.css');
+
+       
+</style>
+    <body>
+<header class="header">
+  <div class="logo">
+    <img src="logo.png" alt="Логотип">
+  </div>
+  <div class="burger-menu" onclick="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+  
+  <nav class="nav">
+    <ul>
+      <li><a href="#work">РАБОТЫ</a></li>
+      <li><a href="#object">ОБЪЕКТЫ</a></li>
+      <li><a href="#materials">МАТЕРИАЛЫ</a></li>
+      <li><a href="#company">О КОМПАНИИ</a></li>
+      <li><a href="#contact">КОНТАКТЫ</a></li>
+    </ul>
+  </nav>
+  <div class="icon-container">
+    <div class="icon-wrapper"> <!-- Новый оберточный div для иконки -->
+      <div class="icon">
+        <img src="ico.png" alt="Иконка">
+      </div>
+    </div>
+    <div class="text-block">
+      <p class="phone">8 (800) 222-65-05</p>
+      <p class="callback">ОБРАТНЫЙ ЗВОНОК</p>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+<section class="hero-slider">
+    <div class="slider-container">
+        <!-- Слайд 1 -->
+        <div class="slide active">
+            <div class="slide-bg" style="background-image: url('background.jpg');">
+                <div class="bg-overlay"></div>
+            </div>
+            <div class="slide-content">
+                <h1 data-animation="fadeInUp">Мебель<br>индивидуального<br>исполнения</h1>
+                <p class="subtitle" data-animation="fadeInUp" data-delay="0.2s"></p>
+                <button class="send-button" data-animation="fadeInUp" data-delay="0.4s">ОСТАВИТЬ ЗАЯВКУ</button>
+            </div>
+        </div>
+        
+        <!-- Слайд 2 -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('background1.jpg');">
+                <div class="bg-overlay"></div>
+            </div>
+            <div class="slide-content">
+                <h1 data-animation="fadeInUp">Изготовление диванов по<br>индивидуальным приектам</h1>
+                <p class="subtitle" data-animation="fadeInUp" data-delay="0.2s">напрямую от производителя</p>
+                <button class="send-button" data-animation="fadeInUp" data-delay="0.4s">ОСТАВИТЬ ЗАЯВКУ</button>
+            </div>
+        </div>
+        
+        <!-- Слайд 3 -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('background2.jpg');">
+                <div class="bg-overlay"></div>
+            </div>
+            <div class="slide-content">
+                <h1 data-animation="fadeInUp">Изготовление мебели для<br> государственных учреждений<br>индивидуального исполнения</h1>
+                <p class="subtitle" data-animation="fadeInUp" data-delay="0.2s">гарантия качества от производителя</p>
+                <button class="send-button" data-animation="fadeInUp" data-delay="0.4s">ОСТАВИТЬ ЗАЯВКУ</button>
+            </div>
+        </div>
+        
+        <!-- Элементы управления -->
+        <button class="slider-nav prev-slide" aria-label="Previous slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <button class="slider-nav next-slide" aria-label="Next slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        
+        <div class="slider-dots">
+            <button class="dot active" aria-label="Go to slide 1"></button>
+            <button class="dot" aria-label="Go to slide 2"></button>
+            <button class="dot" aria-label="Go to slide 3"></button>
+        </div>
+        
+        <!-- Прогресс бар автопрокрутки -->
+        <div class="auto-progress">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="block2">
+    <div class="block2-content">
+        <p class="p1">Tehno-wood в цифрах</p>     
+    </div>
+</section>
+
+<section class="info">
+    <div class="info-column">
+        <h1>6</h1>
+        <p>производственных направлений</p>
+    </div>
+    <div class="info-column">
+        <h1>10</h1>
+        <p>лет на рынке</p>
+    </div>
+    <div class="info-column">
+        <h1>1500</h1>
+        <p>значимых объектов</p>
+    </div>
+     <div class="info-column">
+        <h1>6000м2</h1>
+        <p>производственной площади</p>
+    </div>
+</section>
+
+
+
+<section class="block3" id="work">
+    <p class="block3-title">Принципы нашей работы</p>
+    <div class="block3-content">
+        <div class="image-wrapper">
+    <div class="frame"></div> 
+    <div class="image-group">
+        <img src="photo1.jpg" alt="Фото 1" class="small">
+        <img src="photo2.jpg" alt="Фото 2" class="small">
+    </div>
+    <img src="photo3.jpg" alt="Фото 3" class="large">
+    <ul class="principles-list">
+    <li>
+        <div class="line"></div>
+        <span class="number">01</span>
+        <p class="custom">Использование только качественного материала и фурнитуры</p>
+    </li>
+    <li>
+        <div class="line"></div>
+        <span class="number">02</span>
+        <p  class="custom">Клиентоориентированность и мобильность</p>
+    </li>
+    <li>
+        <div class="line"></div>
+        <span class="number">03</span>
+        <p  class="custom">Жесткий контроль качества и доставки продукции</p>
+    </li>
+    <li>
+        <div class="line"></div>
+        <span class="number">04</span>
+        <p  class="custom">Мгновенное реагирование на требования заказчиков</p>
+    </li>
+    <li>
+        <div class="line"></div>
+        <span class="number">05</span>
+        <p  class="custom">Многопрофильное производство по принципу "все включено"</p>
+    </li>
+</ul>
+    </div>
+        
+    </div>
+</section>
+
+
+
+<section class="block4" id="materials">
+  <div class="text-container">
+    <p class="bigtext">
+  <span>Изготовление мебели</span>
+  <span>по индидуальному</span>
+  <span>исполнению</span>
+</p>
+<p class="smalltext">Мебельная фабрика Техно-Вуд с 2010 года занимается оснащением учреждений образования, здравоохранения и силовых ведомств качественной и современной мебелью.<br> Важным конкурентным преимуществом нашей фабрики является наличие разных направлений в производстве мебели.</p>
+  </div>
+  
+  <div class="grid-wrapper">
+      <div class="grid-container">
+         <div class="grid-item">
+            <button class="btn">Гос. контракты</button>
+         </div>
+
+         <div class="grid-item">
+            <button class="btn">Входная группа и хранение</button>
+         </div>
+
+         <div class="grid-item">
+            <button class="btn">Кухонная зона</button>
+         </div>
+
+         <div class="grid-item">
+            <button class="btn">Мягкая мебель</button>
+         </div>
+
+         <div class="grid-item">
+             <button class="btn">Офисная мебель</button>
+         </div>
+
+         <div class="grid-item">
+             <button class="btn">Мебель для гостинной</button>
+         </div>
+
+         <div class="grid-item">
+             <button class="btn">Зона комфорта</button>
+         </div>
+
+         <div class="grid-item">
+             <button class="btn">Детские комнаты</button>
+         </div>
+
+         <div  class="grid-item">
+             <button class="btn">Современная студия</button>
+         </div>
+
+         <div class="grid-item">
+             <button class="btn">Торгово-выстовочное оборудование</button>
+         </div>    
+  </div>
+  </div>
+</div>
+</section>
+
+
+
+<div class="content-block" id="company">
+  <div class="text-section">
+    <p class="large-text">
+        <span>Как мы</span>
+        <span>производим мебель</span>
+    </p>
+    <p class="small-text">
+    <span class="spacing">Производственный цех расположен в Кстовском районе, Нижегородской области и занимает более 6000 м².</span><br>
+    Наличие многофункционального современного оборудования и хорошо развитой логистической сети позволяет минимизировать человеческий фактор при выпуске продукции, и осуществлять отгрузки нашим партнерам и клиентам точно в указанные сроки.
+</p>
+
+  </div>
+
+
+ <div class="container">
+  <div class="video-section">
+    <div class="video-overlay" id="overlay">
+      <div class="play-button" id="playButton">▶</div>
+      <p class="overlay-text">Нажмите для просмотра</p>
+    </div>
+    <video id="video" controls>
+      <source src="video1.mp4" type="video/mp4">
+    </video>
+  </div>
+
+
+
+
+
+  
+  <div class="next-block">
+     <div class="form-container">
+         <p class="large1-text">Реализуем ваши идеи</p>
+    <p class="small2-text">Пришлите нам свой эскиз или опишите задумку и мы воплотим ее в жизнь в самые кратчайшие сроки</p>
+    <form>
+           <input  class="input" type="text" id="name" placeholder="Имя/Фамилия ">
+       <input class="input" type="tel" id="phone" placeholder="Телефон">
+
+      <textarea id="comment" name="comment" placeholder="Введите ваш комментарий..." required></textarea>
+
+      <div class="file-upload">
+  <label for="file" class="file-label">Прикрепить файл</label>
+  <input type="file" id="file" name="file">
+</div>
+
+      <button  class="button" id="changeColorBtn" >Отправить</button>
+       <div class="agreement">
+      <input type="checkbox" id="consent" name="consent" required>
+      <label for="consent">Даю согласие на обработку моих персональных данных</label>
+    </div>
+    </form>
+  </div>
+  <div class="image-container">
+    <img src="newblock1.jpg" alt="Изображение">
+  </div>
+</div>
+
+
+
+
+
+<div class="container1">
+        <h2 class="zagolovok">Схема работы</h2>
+        <div class="steps">
+              <div class="step-group">
+            <div>
+                    <div class="circle">01</div>
+                    <div class="description">Оставляете нам заявку на сайте или звоните</div>
+                </div>
+                <div class="line1"></div>
+                <div>
+                    <div class="circle">02</div>
+                    <div class="description">Наш специалист выезжает к вам на замер</div>
+                </div>
+                <div class="line1"></div>
+                <div>
+                    <div class="circle">03</div>
+                    <div class="description">Мы составляем смету, учитывая все ваши пожелания</div>
+                </div>
+                <div class="line1"></div>
+                <div>
+                    <div class="circle">04</div>
+                    <div class="description">Согласовываем сроки, стоимость и заключаем договор</div>
+                </div>
+                <div class="line1"></div>
+            </div>
+            <div class="step-group">
+                <div>
+                    <div class="circle">05</div>
+                    <div class="description">Приступаем к работе</div>
+                </div>
+                <div class="line1"></div>
+                <div>
+                    <div class="circle">06</div>
+                    <div class="description">По завершении работы - ее прием и оплата</div>
+                </div>
+                <div class="line1"></div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+
+        
+ <div class="slider-container4" id="object">
+    <h1 class="zagolovok">Наши объекты</h1>
+    <div class="slider4">
+        <div class="slide4"><img src="block6_3.jpg" alt="Левое изображение"></div>
+        <div class="slide4 active"><img src="block6_1.jpg" alt="Центральное изображение"></div>
+        <div class="slide4"><img src="block6_2.jpg" alt="Правое изображение"></div>
+    </div>
+    <div class="slider-indicators4">
+        <div class="indicator4" data-index="0"></div>
+        <div class="indicator4 active" data-index="1"></div>
+        <div class="indicator4" data-index="2"></div>
+    </div>
+</div>
+
+
+
+
+
+<div class="slider-container1">
+    <h2 class="zagolovok">С нами работают</h2>
+    <div class="slider1">
+        <div class="slide1">
+              <div class="company-icons">
+            <img src="company1.png" alt="Компания 1">
+            <img src="company2.png" alt="Компания 2">
+            <img src="company3.png" alt="Компания 3">
+            <img src="company4.png" alt="Компания 4"  class="horizontal">
+            <img src="company5.png" alt="Компания 5"  class="horizontal">
+            <img src="company6.png" alt="Компания 6" class="horizontal">
+            <img src="company7.png" alt="Компания 7" class="horizontal">
+            <img src="company8.png" alt="Компания 8">
+            <img src="company9.png" alt="Компания 9">
+            <img src="company10.png" alt="Компания 10">
+        </div>
+        </div>
+        <div class="slide1">
+            <div class="company-icons">
+            <img src="company1.png" alt="Компания 1">
+            <img src="company2.png" alt="Компания 2">
+            <img src="company3.png" alt="Компания 3">
+            <img src="company4.png" alt="Компания 4" class="horizontal">
+            <img src="company5.png" alt="Компания 5" class="horizontal">
+            <img src="company6.png" alt="Компания 6" class="horizontal">
+            <img src="company7.png" alt="Компания 7" class="horizontal">
+            <img src="company8.png" alt="Компания 8">
+            <img src="company9.png" alt="Компания 9">
+            <img src="company10.png" alt="Компания 10">
+        </div>
+    </div>
+    <div class="slide1">
+              <div class="company-icons">
+            <img src="company1.png" alt="Компания 1">
+            <img src="company2.png" alt="Компания 2">
+            <img src="company3.png" alt="Компания 3">
+            <img src="company4.png" alt="Компания 4"  class="horizontal">
+            <img src="company5.png" alt="Компания 5"  class="horizontal">
+            <img src="company6.png" alt="Компания 6" class="horizontal">
+            <img src="company7.png" alt="Компания 7" class="horizontal">
+            <img src="company8.png" alt="Компания 8">
+            <img src="company9.png" alt="Компания 9">
+            <img src="company10.png" alt="Компания 10">
+        </div>
+        </div>
+    </div>
+    <button class="prev1">&lt;</button>
+    <button class="next1">&gt;</button>
+</div>
+<div class="slider-dots1"></div>
+
+
+<div class="projects">
+    <h2 class="zagolovok">География наших проектов</h2>
+    <img src="karta.png" alt="Карта наших проектов">
+</div>
+
+
+
+
+<div class="thanks-block">
+    <h2 class="thanks-title">Благодарственные письма</h2>
+    <div class="slider-container2">
+        <div class="slider2">
+            <div class="slide2">
+                <img src="pic1.jpg" alt="Письмо 1">
+                <img src="pic1.jpg" alt="Письмо 2">
+                <img src="pic1.jpg" alt="Письмо 3">
+                <img src="pic1.jpg" alt="Письмо 4">
+            </div>
+            <div class="slide2">
+                <img src="pic1.jpg" alt="Письмо 5">
+                <img src="pic1.jpg" alt="Письмо 6">
+                <img src="pic1.jpg" alt="Письмо 7">
+                <img src="pic1.jpg" alt="Письмо 8">
+            </div>
+        </div>
+        <button class="prev2">&lt;</button>
+        <button class="next2">&gt;</button>
+    </div>
+    <div class="slider-dots2"></div>
+</div>
+
+
+
+<div class="contact-block" id="contact">
+    <div class="contact-info">
+        <h2>Свяжитесь с нами любым удобным способом</h2>
+        <div class="contact-icons">
+            <div class="contact-item">
+                <img src="ico.png" alt="Телефон">
+                <span>8 (83145) 2-46-11</span>
+            </div>
+            <div class="contact-item">
+                <img src="ico2.png" alt="Email">
+                <span>tehno-wood@mail.ru</span>
+            </div>
+            <div class="contact-item">
+                <img src="ic3.png" alt="Адрес">
+                <span>г. Кстово, Типографский проезд, 11а</span>
+            </div>
+        </div>
+        <form class="callback">
+            <label for="phone">Обратный звонок</label>
+            <input class="input" type="tel" id="iphone" placeholder="Телефон" >
+            <button class="button" type="submit">Отправить</button>
+            <div class="agreement">
+                <input type="checkbox" id="iconsent" required>
+                <label for="iconsent" required>Я даю согласие на обработку моих персональных данных</label>
+            </div>
+        </form>
+    </div>
+  <div class="contact-map">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2222.392390343802!2d44.208788504504646!3d56.15031992443242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414fd7c357cf9503%3A0x3df5d31b37668efe!2sTehno-Wood!5e0!3m2!1sen!2sby!4v1747731150560!5m2!1sen!2sby" 
+        width="800" 
+        height="500" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+
+</div>
+
+ <div class="container4">
+        <h2 class="text4">Форма регистрации</h2>
+        <form id="userForm">
+            <input class="input1" type="email" id="email" placeholder="Email">
+            <input class="input1" type="password" id="password" placeholder="Пароль">
+            <button class="button2"  id="togglePassword" type="button">👁 Показать</button>
+            <label for="birthdate">Дата рождения</label>
+            <input type="date" id="birthdate" class="input1">
+           <button class="button1" id="changeColorBtn">Отправить</button>
+        </form>
+    </div>
+
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer__logo">
+            <img src="logo.png" alt="Логотип">
+        </div>
+       <nav class="footer-nav">
+            <ul>
+                 <li><a href="#work">РАБОТЫ</a></li>
+      <li><a href="#object">ОБЪЕКТЫ</a></li>
+      <li><a href="#materials">МАТЕРИАЛЫ</a></li>
+      <li><a href="#company">О КОМПАНИИ</a></li>
+      <li><a href="#contact">КОНТАКТЫ</a></li>
+            </ul>
+        </nav>
+        <div class="footer__contact-info">
+            <div class="footer___icon">
+                <img src="ico.png" alt="Иконка">
+            </div>
+            <div class="footer__text-block">
+                <p class="footer__phone">8 (800) 222-65-05</p>
+                <p class="footer__callback">ОБРАТНЫЙ ЗВОНОК</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="script1.js"></script>
+<script src="script2.js"></script>
+<script src="script3.js"></script>
+<script src="script4.js"></script>
+<script src="script5.js"></script>
+<script src="script6.js"></script>
+<script src="form.js"></script>
+</div>
+</body>
