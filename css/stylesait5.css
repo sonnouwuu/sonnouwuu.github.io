@@ -1,0 +1,134 @@
+.contact-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #121212; /* Черный фон */
+    padding: 60px 20px;
+    width:100%;
+    margin-left: -100px;
+    
+}
+
+.contact-info {
+    width: 40%; /* Уменьшаем ширину блока информации */
+    color: white;
+    text-align: left;
+    margin-left: 5%; /* Сдвигаем левее, оставляя пустое пространство */
+   
+}
+
+.contact-info h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+     font-weight: lighter;
+}
+
+.contact-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.contact-item img {
+    width: 24px;
+    height: 24px;
+}
+
+.callback {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 60%;
+    font-size: 10px;
+
+}
+
+input[type="tel"] {
+    padding: 10px;
+    border: none;
+    background: #808080;
+    color: white;
+}
+
+button {
+    background-color: rgb(199, 160, 112);
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.agreement {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #808080;
+}
+
+.callback .input {
+     transition: all 0.3s ease-in-out;
+    outline: none;
+
+}
+/* Растягиваем карту на всю ширину контейнера */
+.contact-map {
+    width: 50%;
+    align-self: flex-start; /* Поднимаем карту */
+    margin-top: -60px; /* Двигаем выше */
+}
+
+.contact-map img {
+    width: 100%;
+    
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .contact-block {
+        flex-direction: column; /* Делаем блок вертикальным */
+        align-items: center;
+        text-align: center;
+
+    }
+
+    .contact-info {
+        width: 100%;
+        margin-left: 100px;
+    }
+
+    .callback {
+        width: 90%;
+
+    }
+
+    .contact-map {
+        width: 30%;
+        margin-top: 0px; /* Убираем отрицательный отступ */
+    }
+}
+
+/* Адаптация для совсем маленьких экранов */
+@media (max-width: 480px) {
+    .contact-info h2 {
+        font-size: 26px; /* Уменьшаем заголовок */
+    }
+
+    .contact-item {
+        font-size: 12px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}

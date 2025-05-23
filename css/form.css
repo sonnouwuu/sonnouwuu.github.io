@@ -1,0 +1,99 @@
+.container4 {
+    max-width: 800px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 70%;
+}
+
+/* Заголовок */
+.text {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Поля ввода */
+.input1  {
+    display: block;
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+input:focus {
+    border-color: #ff5722;
+    box-shadow: 0px 0px 15px rgba(255, 87, 34, 0.5);
+}
+
+
+/* Кнопки */
+.button1 {
+    background: #111208;
+    color: white;
+    border: none;
+    padding: 10px 60px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: -10px;
+    transition: background 0.3s ease-in-out;
+}
+
+.button1:hover {
+    background: #50504f;
+}
+
+/* Анимация при наведении */
+.button1:active {
+    transform: scale(0.97);
+}
+
+
+
+
+
+/* Кнопки */
+.button2 {
+    background: #111208;
+    color: white;
+    border: none;
+    padding: 12px 80px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: -10px;
+    transition: background 0.3s ease-in-out;
+}
+
+.button2:hover {
+    background: #50504f;
+}
+
+/* Анимация при наведении */
+.button2:active {
+    transform: scale(0.97);
+}
+
+
+
+/* Телефонное поле */
+#iphone {
+    font-size: 16px;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 480px) {
+    .container4 {
+        max-width: 90%;
+    }
+    .button1, .button2 {
+        padding: 6px 30px; /* Уменьшаем еще сильнее для мобильных */
+}
+}
