@@ -1,0 +1,99 @@
+/* Фон */
+body {
+    background: linear-gradient(to right, #f5cccb, #e0c697);
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+}
+/* Изображение */
+img {
+    width: 300px;
+    border: 4px solid #916160;
+    border-radius: 100px;
+    display: block;
+    margin:  auto;
+}
+caption{
+    color: #916160;
+    font-family: URW Chancery L, cursive;
+    font-weight: bold;
+}
+  /* Таблицы */
+   table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto;
+}
+th {
+    background-color: #f7debb;
+    color: rgb(224, 100, 100);
+    padding: 1%;
+    font-family: Courier New, monospace;
+    font-weight: bold;
+}
+td {
+    background-color: #f29694;
+    color:hsl(36, 63%, 92%);
+    text-align: center;
+    border: 1px solid #f7debb;
+    padding: 10px;
+    font-family: URW Chancery L, cursive;
+}
+figcaption{
+    color: #916160;
+    font-family: URW Chancery L, cursive;
+    font-weight: bold;
+}
+/* Кнопка */
+button {
+    background-color: rgb(239, 125, 125);
+    color: #f3f3f3;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Courier New, monospace; /* Шрифт для текста */
+    color:#916160;  
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background-color: #f1c08f;
+    transform: scale(1.1);
+}
+/* Стили для меток */
+label {
+    font-family: Courier New, monospace; /* Шрифт для текста */
+    font-weight: bold;
+    color:#916160;  
+}
+select {
+    background-color: #f1c0;
+    width: 30%; /* Ширина списка */
+    padding: 10px; /* Внутренние отступы */
+    margin-bottom: 15px; /* Отступ снизу */
+    border: 2px solid #916160; /* Цвет рамки */
+    border-radius: 10px; /* Закругленные углы */
+    font-family: Courier New, monospace; /* Шрифт для текста */
+    color:#916160;  
+    font-weight: bold;
+}
+textarea {
+    background-color: #f1c0;
+    width: 43%; /* Ширина текстовой области */
+    padding: 10px; /* Внутренние отступы */
+    border: 2px solid #916160; /* Цвет рамки */
+    border-radius: 20px; /* Закругленные углы */
+    font-size: 16px; /* Размер текста */
+    font-family: Courier New, monospace; /* Шрифт для текста */
+    color:#916160;  
+    font-weight: bold;
+    margin-bottom: 15px; /* Отступ снизу */
+}
+  del {
+    color: #916160;
+     /* Серый цвет для зачеркнутого текста */
+    text-decoration: line-through; /* Эффект зачёркивания */
+}
+
+ 
+ 

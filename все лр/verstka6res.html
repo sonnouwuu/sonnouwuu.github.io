@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Адаптивный резиновый макет (Grid)</title>
+  <style>
+    /* Базовые стили для всей страницы */
+    body {
+      margin: 0;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto auto;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "header"
+        "block3"
+        "container"
+        "aside"
+        "footer";
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* Стили для шапки и подвала */
+    .header {
+      grid-area: header;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+    }
+    
+    .footer {
+      grid-area: footer;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+    }
+
+    /* Блок 3 */
+    .block3 {
+      grid-area: block3;
+      background-color: #ff66b2;
+      padding: 5%;
+      text-align: center;
+    }
+
+    /* Контейнер с блоками 4, 5, 6 */
+    .container {
+      grid-area: container;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr; /* Блок 4 шире, блоки 5 и 6 равны */
+      grid-gap: 2%;
+      padding: 2%;
+    }
+
+    /* Блоки 4, 5, 6 */
+    .block4, .block5, .block6 {
+      padding: 5%;
+      text-align: center;
+      width: 100%;
+    }
+
+    .block4 { background-color: #ffcc00; } /* Блок 4 шире */
+    .block5 { background-color: #ff5733; } /* Блок 5 и 6 одинаковые */
+    .block6 { background-color: #33b5e5; }
+
+    /* Контейнер для блоков 7, 8, 9, 10 */
+    .aside-container {
+      grid-area: aside;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(200px, 1fr)); /* Две колонки */
+      grid-template-rows: auto auto; /* Две строки */
+      grid-gap: 2%;
+      padding: 2%;
+    }
+
+    /* Блоки 7, 8, 9, 10 */
+    .aside {
+      background-color: #8bc34a;
+      padding: 10%;
+      text-align: center;
+    }
+
+    /* Перемещение блока 10 под блок 9 */
+    .aside:nth-child(4) {
+      grid-column: 2; /* Размещаем в правой колонке */
+      grid-row: 2; /* Перемещаем в нижнюю строку */
+    }
+  </style>
+</head>
+<body>
+  <div class="header">Шапка Блок 1</div>
+  <div class="block3">Блок 3</div>
+  <div class="container">
+    <div class="block4">Блок 4</div>
+    <div class="block5">Блок 5</div>
+    <div class="block6">Блок 6</div>
+  </div>
+  <div class="aside-container">
+    <div class="aside">Блок 7</div>
+    <div class="aside">Блок 9</div>
+    <div class="aside">Блок 8</div>
+    <div class="aside">Блок 10</div> <!-- Теперь расположен под блоком 9 -->
+  </div>
+  <div class="footer">Подвал Блок 2</div>
+</body>
+</html>

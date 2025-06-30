@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Адаптивный макет с фиксированным футером</title>
+  <style>
+    /* Базовые стили */
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Шапка и подвал */
+    .header, .footer {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    /* Контейнер для блоков 4, 5, 6 */
+    .container {
+      display: flex;
+      flex-wrap: wrap; /* Позволяет блокам переноситься */
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    /* Блоки 4, 5, 6 */
+    .block4, .block5, .block6 {
+      flex: 1 1 300px; /* Адаптивный размер */
+      max-width: 100%; /* Предотвращает выход за границы */
+      padding: 40px;
+      text-align: center;
+    }
+
+    .block4 { background-color: #ffcc00; }
+    .block5 { background-color: #ff5733; }
+    .block6 { background-color: #33b5e5; }
+
+    /* Блок 3 */
+    .block3 {
+      background-color: #ff66b2;
+      padding: 20px;
+      margin-bottom: 5px;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* Контейнер для блоков 7, 8, 9, 10 */
+    .aside-container {
+      display: flex;
+      flex-wrap: wrap; /* Адаптация */
+      gap: 10px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+    }
+
+    /* Блоки 7, 8, 9, 10 */
+    .aside {
+      flex: 1 1 250px; /* Адаптивный размер */
+      max-width: 100%;
+      background-color: #8bc34a;
+      padding: 100px;
+      text-align: center;
+    }
+
+    /* Адаптация для мобильных устройств */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column; /* Меняем направление на вертикальное */
+      }
+      .row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">Шапка Блок 1</div>
+  <div class="block3">Блок 3</div>
+  <div class="container">
+    <div class="block4">Блок 4</div>
+    <div class="block5">Блок 5</div>
+    <div class="block6">Блок 6</div>
+  </div>
+  <div class="aside-container">
+    <div class="row">
+      <div class="aside">Блок 7</div>
+      <div class="aside">Блок 9</div>
+    </div>
+    <div class="row">
+      <div class="aside">Блок 8</div>
+      <div class="aside">Блок 10</div>
+    </div>
+  </div>
+  <div class="footer">Подвал Блок 2</div>
+</body>
+</html>

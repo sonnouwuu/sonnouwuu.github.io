@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации и карточка товара</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 1000px;
+            width: 90%;
+            gap: 30px;
+        }
+        
+        /* Стили для формы регистрации */
+        .registration-form {
+            width: 85%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            align-self: center;
+        }
+        
+        .registration-form h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: left;
+        }
+        
+        /* Новая структура с выравниванием */
+        .form-container {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .form-row {
+            display: contents;
+        }
+        
+        .form-label {
+            color: #555;
+            text-align: left;
+            padding-right: 15px;
+            min-width: 180px; /* Добавлено для выравнивания меток */
+        }
+        
+        .input-container {
+            display: flex;
+        }
+        
+        .form-control {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%; /* Добавлено для одинаковой ширины */
+        }
+        
+        /* Одинаковые размеры полей ввода */
+        #name, #email {
+            width: 400px;
+        }
+        
+        #password {
+            width: 250px;
+        }
+        
+        .country-select {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+        }
+        
+        #phone {
+            width: 200px;
+        }
+        
+        .password-container {
+            display: flex;
+        }
+        
+        .password-container input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+             
+        }
+        
+        .show-password {
+            padding: 10px 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-left: none;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+
+        }
+        
+        .checkboxes-container {
+            grid-column: 2;
+            margin: 10px 0;
+        }
+        
+        .checkbox-group {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .checkbox-group input {
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        
+        .checkbox-group label {
+            color: #555;
+            font-weight: normal;
+            font-size: 14px;
+        }
+        
+        /* Блок с капчей */
+        .captcha-wrapper {
+            grid-column: 2;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            margin-right: 250px;
+            margin-left: -260px;
+        }
+        
+        .verification-code {
+            color: #555;
+            font-size: 16px;
+            margin-right: 10px;
+            white-space: nowrap;
+            min-width: 250px; /* Добавлено для выравнивания с другими метками */
+            text-align: left; /* Выравнивание текста слева */
+            margin-left: 60px;
+            
+        }
+        
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            flex-grow: 1;
+            margin-left: -60px;
+        }
+        
+        .captcha-checkbox {
+            margin-right: 20px;
+            width: 20px;
+            height: 20px;
+            
+        }
+        
+        .captcha-content {
+            display: flex;
+            flex-direction: column;
+            
+        }
+        
+        .captcha-label {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .captcha-text {
+            font-size: 12px;
+            color: #777;
+        }
+        
+        .submit-container {
+            grid-column: 2;
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 20px;
+            margin-left: 70px;
+            margin-left: 3px;
+
+        }
+        
+        .submit-btn {
+            padding: 10px 85px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+    
+        }
+        
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        
+        /* Стили для карточки товара */
+        .product-card-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .product-image {
+            height: 330px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+             position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .product-details {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .product-title, .rating, .availability, .price, .bonus, .buy-btn {
+            grid-column: 1 / -1;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap; /* Разрешаем перенос */
+        }
+        
+        .stars {
+            color: #FFD700;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        
+        .rating-count {
+            color: #777;
+            font-size: 14px;
+        }
+        
+        .availability {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .availability::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .bonus {
+            color: #FF9800;
+            margin-bottom: 15px;
+        }
+        
+        .buy-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #FF9800;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .buy-btn:hover {
+            background-color: #F57C00;
+        }
+        
+        .compare-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+     margin-left: auto; /* Прижимаем вправо */
+    
+}
+
+.compare-text {
+    font-size: 14px;
+    color: #555;
+   
+}
+
+.compare-switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+}
+
+.compare-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.compare-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .3s;
+    border-radius: 20px;
+}
+
+.compare-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+}
+
+.compare-switch input:checked + .compare-slider {
+    background-color: #2196F3;
+}
+
+    .gift-text {
+        color: white;
+        font-weight: 700;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    
+    .gift-label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #FF0000;
+        color: white;
+        font-weight: 700;
+        font-size: 14px;
+        padding: 5px 12px;
+        border-radius: 20px;
+        z-index: 2;
+        white-space: nowrap;
+    }
+    
+    /* Стили для иконки подарка */
+   .gift-icon {
+    position: absolute;
+    top: 3px;
+    right: -250px;
+    width: 24px !important;       /* Принудительный размер */
+    height: 24px !important;
+    max-width: 24px !important;   /* Дополнительная страховка */
+    max-height: 24px !important;
+    object-fit: contain;
+    object-position: center;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+.image-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 0;
+        margin: 0 auto;
+        width: 100%;
+        background: white; /* Фон, если нужен */
+    }
+    
+    .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #ccc; /* Светло-серый по умолчанию */
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+     .dot.active {
+        background-color: #555; /* Тёмно-серый для активной точки */
+        opacity: 1;
+        width: 10px;
+        height: 10px;
+    }
+
+
+.compare-switch input:checked + .compare-slider:before {
+    transform: translateX(16px);
+}
+  .error-message {
+            color: #ff4444;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+            grid-column: 2;
+        }
+        
+        .valid {
+            border-color: #00C851 !important;
+            background-color: #e8f5e9 !important;
+        }
+        
+        .form-row {
+            margin-bottom: 5px;
+        }
+        
+        .checkbox-error {
+            color: #ff4444;
+            font-size: 12px;
+            margin-left: 25px;
+            display: none;
+        }
+        
+        .captcha-error {
+            color: #ff4444;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+            grid-column: 2;
+        }
+        
+        @media (max-width: 900px) {
+            .main-container {
+                flex-direction: column;
+            }
+            
+            .product-card-container {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .form-container {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+            
+            .form-label, .verification-code {
+                text-align: left;
+                margin-top: 10px;
+                padding-right: 0;
+                min-width: auto;
+            }
+            
+            .checkboxes-container, .captcha-wrapper, .submit-container {
+                grid-column: 1;
+            }
+            
+            .verification-code {
+                margin-bottom: 10px;
+                display: block;
+                
+                
+            }
+            
+            .captcha-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-left: 60px;
+                margin-right: -5px;
+            }
+            
+            .captcha-container {
+                width: 80%;
+            
+            }
+            
+            .submit-container {
+                justify-content: center;
+            }
+
+            .product-image img {
+                width: 300px;
+                height: 300px;
+                object-fit: contain;
+            }
+
+            .product-image {
+                height: 260px;
+            }
+            
+            /* Поля ввода на всю ширину на мобильных */
+            #name, #email, #password, 
+            .country-select, #phone,
+            .password-container {
+                width: 100% !important;
+            }
+
+            .compare-section {
+    
+    margin-right: -10px;
+}
+              .rating-count {
+        width: 100%; /* Занимает всю строку */
+        order: 1; /* Переносит ниже звезд (если нужно) */
+    }
+
+            .gift-label {
+            font-size: 12px;
+            padding: 3px 8px;
+            top: 5px;
+            left: 5px;
+        }
+        
+        .gift-icon {
+            width: 18px;
+            height: 18px;
+            top: 5px;
+            right: 5px;
+        }
+        
+        .rating-count {
+            flex-basis: 100%;
+            margin-top: 4px;
+        }
+
+        .gift-icon{
+            right: -170px;
+            top: -1px;
+        }
+
+          .submit-btn {
+            padding: 10px 55px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+
+                    .error {
+            border-color: #ff4444 !important;
+            background-color: #ffebee !important;
+        }
+        
+      
+        
+        @media (max-width: 900px) {
+            .error-message, .captcha-error {
+                grid-column: 1;
+            }
+        
+    
+        
+
+        }
+    }
+    }
+        
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Форма регистрации -->
+        <div class="registration-form">
+            <h2>Новый аккаунт</h2>
+            <form class="form-container">
+                <!-- Метки и поля ввода -->
+                <div class="form-row">
+                    <label for="name" class="form-label">Как к вам обращаться:</label>
+                    <div class="input-container">
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label for="email" class="form-label">Электронная почта:</label>
+                    <div class="input-container">
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label for="password" class="form-label">Пароль:</label>
+                    <div class="input-container password-container">
+                        <input type="password" id="password" class="form-control" required>
+                        <span class="show-password" onclick="togglePassword()">Показать пароль</span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label for="country" class="form-label">Страна:</label>
+                    <div class="input-container">
+                        <select id="country" class="country-select" required>
+                            <option value="">Выберите страну</option>
+                            <option value="ru">Россия</option>
+                            <option value="by">Беларусь</option>
+                            <option value="kz">Казахстан</option>
+                            <option value="ua">Украина</option>
+                            <option value="other">Другая страна</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label for="phone" class="form-label">Мобильный телефон:</label>
+                    <div class="input-container">
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                </div>
+                
+                <!-- Чекбоксы -->
+                <div class="checkboxes-container">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="invitations" required>
+                        <label for="invitations">Я принимаю приглашения</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agreement" required>
+                        <label for="agreement">Я принимаю условия договора оферты</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="age" required>
+                        <label for="age">Мне исполнилось 18 лет</label>
+                    </div>
+                </div>
+                
+                <!-- Капча -->
+                <div class="captcha-wrapper">
+                    <span class="verification-code">Код проверки</span>
+                    <div class="captcha-container">
+                        <input type="checkbox" id="captcha" class="captcha-checkbox" required>
+                        <div class="captcha-content">
+                            <span class="captcha-label">Я не робот</span>
+                            <span class="captcha-text">Kонфиденциальность - Условия пользования</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Кнопка отправки -->
+                <div class="submit-container">
+                    <button type="submit" class="submit-btn">Зарегистрироваться</button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Карточка товара -->
+       <div class="product-card-container">
+    <div class="product-card">
+        <div class="product-image">
+            <div class="gift-label">
+                <span class="gift-text">Идея подарка</span>
+                <img src="Лого.png" alt="Подарок" class="gift-icon">
+            </div>
+            <img src="Снимок экрана 2025-06-11 234313.jpg" alt="Фитнес-браслет Xiaomi Smart Band 7 Pro">
+        </div>
+        <!-- Карусель точек -->
+                   <div class="image-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+
+        <div class="product-details">
+            <h3 class="product-title">Фитнес-браслет Xiaomi Smart Band 7 Pro Black (BHR5970GL)</h3>
+            <div class="rating">
+                <div class="stars">★★★★★</div>
+                <div class="rating-count">(124 отзыва)</div>
+                <div class="compare-section">
+                    <span class="compare-text">Сравнить</span>
+                    <label class="compare-switch">
+                        <input type="checkbox">
+                        <span class="compare-slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="availability">В наличии</div>
+            <div class="price">249,91 руб.</div>
+            <div class="bonus">5 баллов на счет</div>
+            <button class="buy-btn">Купить</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const showButton = document.querySelector('.show-password');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                showButton.textContent = 'Скрыть пароль';
+            } else {
+                passwordInput.type = 'password';
+                showButton.textContent = 'Показать пароль';
+            }
+        }
+    </script>
+
+        <script>
+        // Функция для показа/скрытия пароля
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const showButton = document.querySelector('.show-password');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                showButton.textContent = 'Скрыть пароль';
+            } else {
+                passwordInput.type = 'password';
+                showButton.textContent = 'Показать пароль';
+            }
+        }
+        
+        // Функции валидации
+        function validateName() {
+            const nameInput = document.getElementById('name');
+            const nameValue = nameInput.value.trim();
+            const errorElement = document.getElementById('name-error') || createErrorElement(nameInput, 'name-error');
+            
+            // 1. Проверка на заполненность
+            if (nameValue === '') {
+                showError(nameInput, errorElement, 'Поле обязательно для заполнения');
+                return false;
+            }
+            
+            // 3. Проверка длины (минимум 2 символа, максимум 50)
+            if (nameValue.length < 2) {
+                showError(nameInput, errorElement, 'Имя слишком короткое (мин. 2 символа)');
+                return false;
+            }
+            
+            if (nameValue.length > 50) {
+                showError(nameInput, errorElement, 'Имя слишком длинное (макс. 50 символов)');
+                return false;
+            }
+            
+            // 2. Проверка формата (только буквы и пробелы)
+            const nameRegex = /^[a-zA-Zа-яА-ЯёЁ\s-]+$/;
+            if (!nameRegex.test(nameValue)) {
+                showError(nameInput, errorElement, 'Имя может содержать только буквы, пробелы и дефисы');
+                return false;
+            }
+            
+            showValid(nameInput, errorElement);
+            return true;
+        }
+        
+        function validateEmail() {
+            const emailInput = document.getElementById('email');
+            const emailValue = emailInput.value.trim();
+            const errorElement = document.getElementById('email-error') || createErrorElement(emailInput, 'email-error');
+            
+            // 1. Проверка на заполненность
+            if (emailValue === '') {
+                showError(emailInput, errorElement, 'Поле обязательно для заполнения');
+                return false;
+            }
+            
+            // 2. Проверка формата email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailValue)) {
+                showError(emailInput, errorElement, 'Введите корректный email (например, user@example.com)');
+                return false;
+            }
+            
+            // 3. Проверка длины (максимум 100 символов)
+            if (emailValue.length > 100) {
+                showError(emailInput, errorElement, 'Email слишком длинный (макс. 100 символов)');
+                return false;
+            }
+            
+            showValid(emailInput, errorElement);
+            return true;
+        }
+        
+        function validatePassword() {
+            const passwordInput = document.getElementById('password');
+            const passwordValue = passwordInput.value;
+            const errorElement = document.getElementById('password-error') || createErrorElement(passwordInput, 'password-error');
+            
+            // 1. Проверка на заполненность
+            if (passwordValue === '') {
+                showError(passwordInput, errorElement, 'Поле обязательно для заполнения');
+                return false;
+            }
+            
+            // 3. Проверка длины (минимум 8 символов, максимум 30)
+            if (passwordValue.length < 8) {
+                showError(passwordInput, errorElement, 'Пароль слишком короткий (мин. 8 символов)');
+                return false;
+            }
+            
+            if (passwordValue.length > 30) {
+                showError(passwordInput, errorElement, 'Пароль слишком длинный (макс. 30 символов)');
+                return false;
+            }
+            
+            // 2. Проверка сложности (хотя бы одна цифра и одна буква)
+            const hasNumber = /\d/.test(passwordValue);
+            const hasLetter = /[a-zA-Zа-яА-ЯёЁ]/.test(passwordValue);
+            
+            if (!hasNumber || !hasLetter) {
+                showError(passwordInput, errorElement, 'Пароль должен содержать хотя бы одну букву и одну цифру');
+                return false;
+            }
+            
+            showValid(passwordInput, errorElement);
+            return true;
+        }
+        
+        function validateCountry() {
+            const countrySelect = document.getElementById('country');
+            const countryValue = countrySelect.value;
+            const errorElement = document.getElementById('country-error') || createErrorElement(countrySelect, 'country-error');
+            
+            // 1. Проверка на заполненность
+            if (countryValue === '') {
+                showError(countrySelect, errorElement, 'Выберите страну');
+                return false;
+            }
+            
+            showValid(countrySelect, errorElement);
+            return true;
+        }
+        
+        function validatePhone() {
+            const phoneInput = document.getElementById('phone');
+            const phoneValue = phoneInput.value.trim();
+            const errorElement = document.getElementById('phone-error') || createErrorElement(phoneInput, 'phone-error');
+            
+            // 1. Проверка на заполненность
+            if (phoneValue === '') {
+                showError(phoneInput, errorElement, 'Поле обязательно для заполнения');
+                return false;
+            }
+              // 2. Проверка формата (цифры, может начинаться с +, разрешены скобки, пробелы и дефисы)
+    const phoneRegex = /^\+?[\d\s()-]+$/;
+    if (!phoneRegex.test(phoneValue)) {
+        showError(phoneInput, errorElement, 'Телефон может содержать только цифры, символ + в начале, пробелы, скобки и дефисы');
+        return false;
+    }
+            
+            // 3. Проверка длины (от 7 до 15 цифр)
+            const digitsOnly = phoneValue.replace(/\D/g, '');
+            if (digitsOnly.length < 7 || digitsOnly.length > 15) {
+                showError(phoneInput, errorElement, 'Телефон должен содержать от 7 до 15 цифр');
+                return false;
+            }
+            
+            showValid(phoneInput, errorElement);
+            return true;
+        }
+        
+        function validateCheckboxes() {
+            const checkboxes = [
+                {id: 'invitations', name: 'принятие приглашений'},
+                {id: 'agreement', name: 'условия договора'},
+                {id: 'age', name: 'возрастное ограничение'}
+            ];
+            
+            let allValid = true;
+            
+            checkboxes.forEach(checkbox => {
+                const checkboxElement = document.getElementById(checkbox.id);
+                const errorElement = document.getElementById(`${checkbox.id}-error`) || createCheckboxErrorElement(checkboxElement, `${checkbox.id}-error`);
+                
+                if (!checkboxElement.checked) {
+                    showCheckboxError(checkboxElement, errorElement, `Необходимо подтвердить ${checkbox.name}`);
+                    allValid = false;
+                } else {
+                    showCheckboxValid(checkboxElement, errorElement);
+                }
+            });
+            
+            return allValid;
+        }
+        
+        function validateCaptcha() {
+            const captchaCheckbox = document.getElementById('captcha');
+            const errorElement = document.getElementById('captcha-error') || createCaptchaErrorElement();
+            
+            if (!captchaCheckbox.checked) {
+                showCaptchaError(errorElement, 'Подтвердите, что вы не робот');
+                return false;
+            }
+            
+            showCaptchaValid(errorElement);
+            return true;
+        }
+        
+        // Вспомогательные функции для валидации
+        function createErrorElement(input, id) {
+            const errorElement = document.createElement('div');
+            errorElement.className = 'error-message';
+            errorElement.id = id;
+            
+            const container = input.closest('.form-row') || input.closest('.input-container');
+            if (container) {
+                container.appendChild(errorElement);
+            }
+            
+            return errorElement;
+        }
+        
+        function createCheckboxErrorElement(checkbox, id) {
+            const errorElement = document.createElement('div');
+            errorElement.className = 'checkbox-error';
+            errorElement.id = id;
+            
+            const container = checkbox.closest('.checkbox-group');
+            if (container) {
+                container.appendChild(errorElement);
+            }
+            
+            return errorElement;
+        }
+        
+        function createCaptchaErrorElement() {
+            const errorElement = document.createElement('div');
+            errorElement.className = 'captcha-error';
+            errorElement.id = 'captcha-error';
+            
+            const container = document.querySelector('.captcha-wrapper');
+            if (container) {
+                container.appendChild(errorElement);
+            }
+            
+            return errorElement;
+        }
+        
+        function showError(input, errorElement, message) {
+            input.classList.add('error');
+            input.classList.remove('valid');
+            
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+        
+        function showValid(input, errorElement) {
+            input.classList.remove('error');
+            input.classList.add('valid');
+            
+            errorElement.style.display = 'none';
+        }
+        
+        function showCheckboxError(checkbox, errorElement, message) {
+            checkbox.classList.add('error');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+        
+        function showCheckboxValid(checkbox, errorElement) {
+            checkbox.classList.remove('error');
+            errorElement.style.display = 'none';
+        }
+        
+        function showCaptchaError(errorElement, message) {
+            document.querySelector('.captcha-container').classList.add('error');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+        
+        function showCaptchaValid(errorElement) {
+            document.querySelector('.captcha-container').classList.remove('error');
+            errorElement.style.display = 'none';
+        }
+        
+        // Обработчик отправки формы
+        document.querySelector('.registration-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Выполняем все проверки
+            const isNameValid = validateName();
+            const isEmailValid = validateEmail();
+            const isPasswordValid = validatePassword();
+            const isCountryValid = validateCountry();
+            const isPhoneValid = validatePhone();
+            const areCheckboxesValid = validateCheckboxes();
+            const isCaptchaValid = validateCaptcha();
+            
+            // Если все проверки пройдены
+            if (isNameValid && isEmailValid && isPasswordValid && 
+                isCountryValid && isPhoneValid && areCheckboxesValid && isCaptchaValid) {
+                alert('Форма успешно отправлена!');
+                // Здесь можно отправить форму на сервер
+            } else {
+                // Прокручиваем к первой ошибке
+                const firstError = document.querySelector('.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+        
+        // Добавляем обработчики событий для валидации при вводе
+        document.getElementById('name').addEventListener('blur', validateName);
+        document.getElementById('email').addEventListener('blur', validateEmail);
+        document.getElementById('password').addEventListener('blur', validatePassword);
+        document.getElementById('country').addEventListener('change', validateCountry);
+        document.getElementById('phone').addEventListener('blur', validatePhone);
+        
+        // Для чекбоксов и капчи валидация при изменении
+        document.getElementById('invitations').addEventListener('change', validateCheckboxes);
+        document.getElementById('agreement').addEventListener('change', validateCheckboxes);
+        document.getElementById('age').addEventListener('change', validateCheckboxes);
+        document.getElementById('captcha').addEventListener('change', validateCaptcha);
+    </script>
+</body>
+</html>

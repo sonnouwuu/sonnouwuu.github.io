@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Резюме</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('style1.css');
+         /* Внутренняя таблица стилей */
+         /*Универсальный селектор*/
+         * {
+            margin: 10px;
+            padding: 2px;
+            }
+        /*Селектор тега*/
+        p {
+            color:#916160;
+            font-family: URW Chancery L, cursive;
+            text-decoration: underline;
+            text-align: center;
+            align-items: center; 
+         }
+
+           /*Селектор класса*/
+        .centered-text {
+            text-align: center;
+            color: #916160;
+            font-family: URW Chancery L, cursive;
+        }
+         /* Селектор идентификатора */
+         #harac-title {
+            font-family:URW Chancery L, cursive;
+            color: #916160;
+            text-decoration: underline;
+        }
+         /* Стилизация гиперссылок */
+         a {
+            font-family:URW Chancery L, cursive;
+            color:rgb(224, 100, 100);
+        }
+        /*Псевдокласс*/
+        a:hover {
+            color: rgb(224, 100, 100);
+            text-shadow: 0 0 5px #d38415;
+        }
+         /* Селектор псевдоэлемента */
+         h4::after {
+            content: ' ➤';
+            color:rgb(224, 100, 100);
+            font-size: 1.2em;
+        }
+          /* Селектор дочерних элементов */
+        h1 > a {
+            font-style: italic;
+            font-size: 20px;
+            color: rgb(224, 100, 100);
+            text-decoration: underline;
+        }
+        /* Селектор соседних элементов */
+        h4 + ol {
+            font-family: Courier New, monospace;
+            font-weight: bold;
+            color:#916160 ;
+        }
+        /* Селектор атрибутов */
+        input[type="text"] {
+            font-family: Courier New, monospace;
+            font-weight: bold;
+            font-style: italic;
+            background-color: #f1c0;
+            border: 5px solid rgb(224, 100, 100);
+            padding: 4px;
+            font-size: 14px;
+            width: 200px;
+        }
+        /*Соседние селекторы*/
+        h4, h3 {
+            color: #916160;
+            text-align: center;
+            font-family: URW Chancery L, cursive;
+        }
+</style>
+    </head>
+<body>
+    <p><a name="top"></a></p>
+    <h1 align="center" style="font-family: 'Snell Roundhand', cursive; font-size: 25px; color: #916160; text-decoration: underline;" >Резюме</h1>
+   
+    <img src="photo_2025-02-27_09-31-39.jpg"  width="300"  alt="Фотография">
+    
+    <h2 class="centered-text">Ситкевич София Витальевна</h2>
+    
+    <ul>
+            <p id="harac-title">ХАРАКТЕРИСТИКА</p>
+            <li>Возраст: 18</li>
+            <li>Желаемая должность: техник-программист</li>
+            <li>Желаемый уровень дохода: 1700 руб.</li>
+            <li>Дата рождения: 23.01.2007</li>
+            <li>Проживание: г. Гродно ул. Новоооктябрьская 14</li>
+    </ul>
+
+    
+        <h4>КЛЮЧЕВЫЕ НАВЫКИ</h4>
+        <ol>
+         
+            <li><del>Знание фреймворков.</del></li>
+            <li>Опыт создания и поддержки веб-приложений, мобильных приложений или настольных программ.</li>
+            <li><del>Знание SQL, работа с реляционными и NoSQL базами данных.</del></li>
+            <li>Умение разрабатывать и анализировать алгоритмы, знание базовых структур данных.</li>
+      
+        </ol>
+    
+        <h4>ДОСТИЖЕНИЯ</h4>
+        <ul>
+            
+            <li>Разработка и успешное внедрение крупного проекта.</li>
+            <li>Решение сложной технической проблемы.</li>
+            <li>Вклад в open-source проект.</li>
+       
+        </ul>
+    
+        <h4>ОБРАЗОВАНИЕ</h4>
+        <h5>2022-2025 Гродненский государственный политехнический колледж</h5>
+    
+        <h4>ТАБЛИЦА</h4>
+    <table border="5" cellspacing="6" align="center">
+        <caption>Проекты с результатами</caption>
+        <tr>
+            <th>Проект</th>
+            <td rowspan="5">Мои проекты</td>
+            <th>Краткое описание</th>
+            <th>Результаты/достижения</th>
+        </tr>
+        <tr>
+            <td>Разработка сайта-визитки</td>
+            <td>Создание сайта для малого бизнеса</td>
+            <td>Увеличение трафика на 20%, рост количества заявок на 15%</td>
+            
+        </tr>
+        <tr>
+            <td>Мобильное приложение</td>
+            <td>Разработка приложения для заказа такси</td>
+            <td>Более 10 000 загрузок, средняя оценка 4.5 звезды</td>
+        </tr>
+        <tr>
+            <td>Маркетинговая кампания</td>
+            <td>Проведение рекламной кампании в социальных сетях</td>
+            <td>Увеличение числа подписчиков на 30%, рост продаж на 25%</td>
+
+        </tr>
+    </table>
+    
+    <table border="1" cellspacing="0" align="center">
+
+        <caption>Опыт работы с конкретными инструментами или технологиями</caption>
+        <tr>
+            <th> Инструмент/Технология</th>
+            <th>Опыт работы (годы)</th>
+            <th>Краткое описание опыта</th>
+           
+        </tr>
+        <tr>
+            <td>Adobe Illustrator</td>
+            <td>5</td>
+            <td>Разработка логотипов, иллюстраций для сайтов и печатной продукции</td>
+        </tr>
+        <tr>
+            <td>WordPress </td>
+            <td> 3</td>
+            <td>Создание и поддержка сайтов на WordPress, настройка плагинов и тем </td>
+            
+        </tr>
+        <tr>
+            <td>Microsoft Excel </td>
+            <td>7</td>
+            <td>Анализ данных, создание отчетов, автоматизация задач с использованием формул и макросов</td>
+           
+        </tr>
+        <tr> <td colspan="3"><i>Работа со сложными макетами</i></td></tr>
+    </table>
+    
+        <h4>ЛЮБИМЫЙ ТРЕК</h4>
+        
+        <figure>
+            <figcaption>Послушать:</figcaption>
+            <audio controls src="/audio/Pharaoh Бойсбэнд (Feat. Ca$$Xttx).mp3"></audio>
+            <a href="Pharaoh Бойсбэнд (Feat. Ca$$Xttx).mp3">Слушать песню</a>
+        </figure>
+        
+        
+        <h4>ВИДЕО</h4>
+        <video>
+            <source src="2887463-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    <h4>АНКЕТИРОВАНИЕ</h4>
+    <h5>Выберите уровень в программировании:</h5>
+  <input type="radio" id="red" name="color" value="red">
+  <label for="red">Начинающий (Junior)</label><br>
+  <input type="radio" id="green" name="color" value="green">
+  <label for="green">Средний (Middle)</label><br>
+  <input type="radio" id="blue" name="color" value="blue">
+  <label for="blue">Старший (Senior)</label><br>
+  <input type="radio" id="yellow" name="color" value="yellow">
+  <label for="yellow">Ведущий (Lead/Principal)</label>
+    <h5>Выберите освоенные языки программирования:</h5>
+    <input type="checkbox" id="1">
+    <label for="1">HTML </label><br>
+    <input type="checkbox" id="2">
+    <label for="2">C++</label><br>
+    <input type="checkbox" id="3">
+    <label for="3">Java</label>
+    <h5><label for="name">Введите ФИО:</label><br></h5>
+    <input type="text" placeholder="Введите ваше ФИО"><br><br>
+    <button>Отправить</button>
+    <h5>
+    <label for="dropdown">Выберите опыт работы:</label>
+  <select id="dropdown">
+    <option value="option1">1</option>
+    <option value="option2">3</option>
+    <option value="option3">5</option>
+    <option value="option4">7</option>
+  </select></h5>
+  <h5>Нужны работники по типу задач:</h5>
+  <textarea rows="5" cols="30">
+    Фронтенд-разработчик
+    Бэкенд-разработчик
+    Full-stack разработчик
+    Специалист по базам данных
+    DevOps-инженер
+    </textarea>
+<h3>ССЫЛКИ НА МЕСТА РАБОТЫ</h3>
+<a href="https://www.o-plati.by/">Компания "ОПЛАТИ"</a>
+<A href="https://cloudvps.by/servers/vps/vps_server.php?yclid=1564480412778233855&utm_source=geoadv_maps&utm_content=16371172088">Компания "CloudVPS"</A>
+<a href="https://www.qulix.com/">Компания "Qulix systems"</a>
+
+    <p>П<sub>Е</sub>Р<sup>Е</sup>Й<sub>Т</sub>И <sup>Н</sup>А <sub>Н</sub>А<sub>Ч</sub>А<sup>Л</sup>О <sup>Р</sup>Е<sup>З</sup>Ю<sub>М</sub>Е</p>
+    <h1>
+    <a a href=#top>РЕЗЮМЕ</a>
+</h1>
+</body>
+</html>

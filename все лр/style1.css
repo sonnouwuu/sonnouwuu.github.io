@@ -1,0 +1,23 @@
+ul li {
+            color:#916160;
+            font-family: Courier New, monospace;
+	    font-weight: bold;
+            list-style-type: square;
+            list-style-image: url('marker.png'); /* Графический маркер */
+
+        }
+ 
+h5 {
+      color: #916160;
+      text-align: left;
+      font-family: URW Chancery L, cursive;
+        }
+video {
+    width: 50%; /* Ширина видео */
+    border: 4px solid #916160; /* Граница вокруг видео */
+    border-radius: 15px; /* Закругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень вокруг видео */
+    display: block;
+    margin: auto; /* Центровка видео */
+
+}

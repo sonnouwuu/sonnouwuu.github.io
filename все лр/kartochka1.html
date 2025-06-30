@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="formula-calculator.js"></script>
+    <script>
+        function showCurrentDay() {
+            const currentDate = new Date();
+            const dayOfMonth = currentDate.getDate();
+            alert("Текущее число месяца: " + dayOfMonth);
+        }
+    </script>
+    <style>
+        .result-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            max-width: 500px;
+        }
+
+        .result-box h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .result-box p {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showCurrentDay()">Показать ГОД</button>
+    <button onclick="printNameMultipleTimes()">Вывести ФИО</button>
+    <button onclick="processArray()">Обработать массив</button>
+    <button onclick="calculateFormula()">Рассчитать формулу</button>
+    <a href="javascript:workWithStrings()">Работа со строками</a>
+    
+    <div id="arrayOutput"></div>
+    <div id="formulaOutput" class="result-box"></div>
+    <div id="stringOutput" class="result-box"></div>
+
+    <script>
+        function printNameMultipleTimes() {
+            const n = 13; 
+            const repetitions = n + 5; 
+            let count = 0;
+            
+            do {
+                document.write("Ситкевич София<br>"); 
+                count++;
+            } while (count < repetitions);
+        }
+    </script>
+
+    <script>
+        function processArray() {
+            const input = prompt("Введите 6 целых чисел через запятую (например: 15,4,9,22,7,12):");
+            
+            const originalArray = input.split(',')
+                                     .map(item => parseInt(item.trim()))
+                                     .filter(item => !isNaN(item));
+            
+            if (originalArray.length !== 6) {
+                alert("Ошибка! Нужно ввести ровно 6 чисел через запятую");
+                return;
+            }
+            
+            let sumEven = 0;
+            for (let num of originalArray) {
+                if (num % 2 === 0) {
+                    sumEven += num;
+                }
+            }
+            
+            const sortedArray = [...originalArray].sort((a, b) => b - a);
+            
+            const outputDiv = document.getElementById('arrayOutput');
+            outputDiv.innerHTML = `
+                <h3>Результаты работы с массивом:</h3>
+                <p><strong>Введенный массив:</strong> [${originalArray.join(', ')}]</p>
+                <p><strong>Сумма четных элементов:</strong> ${sumEven}</p>
+                <p><strong>Отсортированный массив (по убыванию):</strong> [${sortedArray.join(', ')}]</p>
+            `;
+        }
+    </script>
+
+    <script>
+        function workWithStrings() {
+            const S1 = "Я люблю Беларусь";
+            const S2 = "Я учусь в Политехническом колледже.";
+            
+            const s1Length = S1.length;
+            const s2Modified = S2.replace("учусь ", "");
+            const s1Modified = S1.replace(/ю/g, "*");
+            
+            const outputDiv = document.getElementById('stringOutput');
+            outputDiv.innerHTML = `
+                <h3>Результаты работы со строками:</h3>
+                <p><strong>Исходная строка S1:</strong> "${S1}"</p>
+                <p><strong>Длина строки S1:</strong> ${s1Length} символов</p>
+                <p><strong>Исходная строка S2:</strong> "${S2}"</p>
+                <p><strong>Модифицированная строка S2 (без "учусь"):</strong> "${s2Modified}"</p>
+                <p><strong>Модифицированная строка S1 (ю → *):</strong> "${s1Modified}"</p>
+            `;
+            
+            // Возвращаем false, чтобы предотвратить переход по ссылке
+            return false;
+        }
+    </script>
+
+</body>
+</html>

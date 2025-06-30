@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вторая карточка</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .fio {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            width: fit-content;
+            cursor: pointer;
+        }
+        img {
+            max-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            margin-top: 20px;
+        }
+        .title-info {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .birthdate {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e6f7ff;
+            border-radius: 5px;
+            display: block;
+            width: fit-content;
+        }
+        button {
+            margin: 10px 0;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="fio" id="fullName">Ситкевич София Витальевна</div>
+    <div id="birthdateContainer"></div>
+    <img src="par.jpg" alt="Пример изображения">
+    
+    <div id="infoContainer"></div>
+    
+    <!-- Добавленная кнопка для применения стилей -->
+    <button id="styleButton">Применить стили к ФИО</button>
+    <!-- Кнопка для получения информации о браузере и ОС -->
+    <button id="browserInfoButton">Показать информацию о системе</button>
+
+    <script>
+        // 1. и 2. Вывод информации о заголовке через 2 секунды
+        setTimeout(function() {
+            const title = document.title;
+            const infoContainer = document.getElementById('infoContainer');
+            
+            const titleInfo = document.createElement('div');
+            titleInfo.className = 'title-info';
+            titleInfo.textContent = `Заголовок документа: "${title}"`;
+            
+            infoContainer.appendChild(titleInfo);
+        }, 2000);
+
+        // 3. Создание элемента с датой рождения при клике на ФИО
+        document.getElementById('fullName').addEventListener('click', function() {
+            const container = document.getElementById('birthdateContainer');
+            // Проверяем, не был ли уже добавлен элемент
+            if (!document.getElementById('birthdateElement')) {
+                const birthdate = document.createElement('div');
+                birthdate.id = 'birthdateElement';
+                birthdate.className = 'birthdate';
+                birthdate.textContent = 'Дата рождения: 23.01.2007';
+                
+                // Вставляем в специальный контейнер между ФИО и фото
+                container.appendChild(birthdate);
+            }
+        });
+
+        // Обработчик для кнопки применения стилей
+        document.getElementById('styleButton').addEventListener('click', function() {
+            const fioElement = document.getElementById('fullName');
+            
+            // Применяем стили через объект style
+            fioElement.style.color = 'red'; // Красный текст
+            fioElement.style.backgroundColor = 'blue'; // Синий фон
+            fioElement.style.fontFamily = 'Arial'; // Шрифт Arial
+            fioElement.style.border = '3px solid green'; // Зеленая граница
+        });
+
+        // Функция для получения информации о браузере и ОС
+        function getBrowserInfo() {
+            const userAgent = navigator.userAgent;
+            let os, browser;
+            
+            // Определение операционной системы
+            if (userAgent.match(/android/i)) {
+                os = "Android";
+            } else if (userAgent.match(/iphone|ipad|ipod/i)) {
+                os = "iOS";
+            } else if (userAgent.match(/windows/i)) {
+                os = "Windows";
+            } else if (userAgent.match(/macintosh|mac os x/i)) {
+                os = "MacOS";
+            } else if (userAgent.match(/linux/i)) {
+                os = "Linux";
+            } else {
+                os = "Неизвестная ОС";
+            }
+            
+            // Определение браузера
+            if (userAgent.match(/firefox|fxios/i)) {
+                browser = "Firefox";
+            } else if (userAgent.match(/opr\//i)) {
+                browser = "Opera";
+            } else if (userAgent.match(/edg/i)) {
+                browser = "Edge";
+            } else if (userAgent.match(/chrome|chromium|crios/i)) {
+                browser = "Chrome";
+            } else if (userAgent.match(/safari/i)) {
+                browser = "Safari";
+            } else {
+                browser = "Неизвестный браузер";
+            }
+            
+            return {
+                os: os,
+                browser: browser,
+                userAgent: userAgent
+            };
+        }
+
+        // Обработчик для кнопки информации о системе
+        document.getElementById('browserInfoButton').addEventListener('click', function() {
+            const info = getBrowserInfo();
+            const infoText = `
+                <h2>Информация о системе:</h2>
+                <p><strong>Операционная система:</strong> ${info.os}</p>
+                <p><strong>Браузер:</strong> ${info.browser}</p>
+                <p><strong>User Agent:</strong> ${info.userAgent}</p>
+            `;
+            
+            // Создаем новое окно
+            const newWindow = window.open('', '_blank', 'width=500,height=300');
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Информация о системе</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; padding: 20px; }
+                        h2 { color: #333; }
+                        p { margin: 10px 0; }
+                    </style>
+                </head>
+                <body>
+                    ${infoText}
+                    <p>Это окно закроется автоматически через 5 секунд...</p>
+                </body>
+                </html>
+            `);
+            
+            // Закрываем окно через 5 секунд
+            setTimeout(() => {
+                newWindow.close();
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
